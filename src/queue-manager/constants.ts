@@ -1,0 +1,9 @@
+export const QUEUE_MANAGER_PROCESSOR = Symbol('QUEUE_MANAGER_PROCESSOR');
+export const REPEATED_TASK_META = Symbol('REPEATED_TASK_META');
+export const JOB_PROCESS_META = Symbol('REPEATED_TASK_META');
+export const JOB_FAIL_META = Symbol('JOB_FAIL_META');
+export const JOB_LOCKER = Symbol('JOB_LOCKER');
+export const NOTIFICATION_SENDER = Symbol('NOTIFICATION_SENDER');
+
+export const DEFAULT_MAX_JOB_ATTEMPTS = 10;
+export const DEFAULT_JOB_RETRY_PERIOD = 10_000;
