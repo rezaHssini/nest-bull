@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  test-redis:
+    container_name: tt-redis
+    image: redis:latest
+    expose:
+      - 6379
+    ports:
+      - '6379:6379'
+    networks:
+      - test-network
+  test-postgress:
+    container_name: tt-postgress
+    image: postgres
+    expose:
+      - 5432
+    ports:
+      - '127.0.0.1:5432:5432'
+    environment:
+      - POSTGRES_USER=${TYPEORM_USERNAME}
+      - POSTGRES_PASSWORD=${TYPEORM_PASSWORD}
+    volumes:
+      - ./init_pg_dbs.sql:/docker-entrypoint-initdb.d/init_pg_dbs.sql
+    networks:
+      - test-network
+networks:
+  test-network:
+    name: test-network

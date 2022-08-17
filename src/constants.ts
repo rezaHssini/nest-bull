@@ -1,0 +1,2 @@
+export const TEST_QUEUE_NAME = 'TEST_QUEUE_NAME';
+export const DEFAULT_TEST_QUEUE_PERIOD = 1000;
